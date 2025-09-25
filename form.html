@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8yNV9zaW1wbGVfM2RfaWxsdXN0cmF0aW9uX29mX2FfcmVjb3Zlcnlfcm9vbV93aV80ZjhkNDIwNC02N2I4LTQwMDQtYTBlNy05YjljMjIyMzE2ZGVfMS5qcGc.jpg');
+            margin-left: auto;
+            background-size: contain;
+            background-position: right center;
+            height: 72%;
+            background-attachment: fixed;
+
+        }
+
+        nav {
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: stretch;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.7);
+            color: #fff;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: FloralWhite;
+            font-family: Arial;
+            font-weight: bold;
+            transition: 0.4s ease-in-out;
+            margin-right: 15px;
+        }
+
+        nav a:last-child {
+            margin-right: 10;
+        }
+
+        nav a:hover {
+            color: #ff7200;
+
+        }
+
+        #content {
+            /* Updated styles for the content */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        #form-container {
+            /* Updated styles for the form container */
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 40%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>
+            <a href="{{url_for('home')}}">Home</a>
+            <a href="{{url_for('dboard')}}">Dashboard</a>
+            <a href="{{url_for('login')}}">Logout</a>
+
+        </div>
+    </nav>
+
+    <div id="content">
+        <div id="form-container">
+            <form action="/form" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="0">Male</option>
+                    <option value="1">Female</option>
+
+                </select>
+
+                <label for="hand">Hand:</label>
+                <select id="hand" name="hand" required>
+                    <option value="0">Right</option>
+                    <option value="1">Left</option>
+                </select>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="educ">Education:</label>
+                <input type="text" id="educ" name="educ" required>
+
+                <label for="ses">SES:</label>
+                <input type="text" id="ses" name="ses" required>
+
+                <label for="mmse">MMSE:</label>
+                <input type="number" id="mmse" name="mmse" required>
+
+                <label for="cdr">CDR:</label>
+                <input type="text" id="cdr" name="cdr" min="0" max="1" step="0.1" required>
+
+                <label for="eTIV">eTIV:</label>
+                <input type="number" id="eTIV" name="eTIV" required>
+
+                <label for="nWBV">nWBV:</label>
+                <input type="number" id="nWBV" name="nWBV" min="0" max="1" step="0.001" required>
+
+                <label for="ASF">ASF:</label>
+                <input type="number" id="ASF" name="ASF" min="0" max="2" step="0.001" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <title>Home page</title>
+</head>
+
+<body>
+    <div class=" main">
+
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Dementia</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="{{url_for('login')}}"><u>Login</u></a></li>
+                    <li><a href="{{url_for('register')}}"><u>Registration</u></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Dementia</h1>
+            <p class="par">Dementia is a neurological condition characterized by a progressive decline in cognitive
+                function,<br>
+                affecting a person's ability to perform everyday activities.<br>
+                It is not a specific disease but a term that encompasses a range of symptoms associated with a loss of
+                memory and other cognitive skills.<br>
+                Dementia is more commonly seen in older adults, but it can also occur in younger individuals.<br><br>
+                &#9830; What are the signs and symptoms of dementia?<br>
+                Because dementia is a general term, its symptoms can vary widely from person to person.<br>
+                People with dementia have problems with:<br>
+
+
+
+                1.Memory<br>
+                2.Attention<br>
+                3.Communication<br>
+                4.Reasoning, judgment, and problem solving<br>
+                5.Visual perception beyond typical age-related changes in vision<br>
+
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

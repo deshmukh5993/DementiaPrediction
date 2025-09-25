@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/register.css') }}">
+    <title>Register page</title>
+</head>
+<body>
+<div class="column">
+
+</div>
+<div class="navbar">
+    <div class="menu">
+    <ul>
+        <li><a href="{{url_for('home')}}"><u>Home</u></a></li>
+        <li><a href="{{url_for('login')}}"><u>Login</u></a></li>
+    </ul>
+    </div>
+</div>
+<div class="center">
+    <h1>Register Page</h1>
+
+    <form action="/register" method="POST">
+        <div class="txt_field">
+            <input type="text" id="fullname" name="fname" required>
+            <span></span>
+            <label for="fullname">Full Name</label>
+        </div>
+        <div class="txt_field">
+            <input type="text" id="username" name="username" required>
+            <span></span>
+            <label for="username">Username</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" id="password" name="password" required>
+            <span></span>
+            <label for="password">Password</label>
+        </div>
+            <input type="submit" value="Register">
+        <div class="login_link">
+            Already have an account? <a href="{{url_for('login')}}">Login</a>
+        </div>
+
+
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Details</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8yNV9zaW1wbGVfM2RfaWxsdXN0cmF0aW9uX29mX2FfcmVjb3Zlcnlfcm9vbV93aV80ZjhkNDIwNC02N2I4LTQwMDQtYTBlNy05YjljMjIyMzE2ZGVfMS5qcGc.jpg');
+            margin-left: auto;
+            background-size: cover;
+            background-position: right center;
+            justify-content: center;
+            align-items: center;
+            background-attachment: fixed;
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.7);
+            color: #fff;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: FloralWhite;
+            font-family: Arial;
+            font-weight: bold;
+            transition: 0.4s ease-in-out;
+            margin-right: 15px;
+        }
+
+        nav a:last-child {
+            margin-right: 10;
+        }
+
+        nav a:hover {
+            color: #ff7200;
+        }
+
+        .details {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .search-buttons {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .search-btn {
+            padding: 10px 15px;
+            margin: 0 5px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+        }
+
+        .search-btn {
+            background-color: #3498db;
+        }
+
+        .reset-btn {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>
+            <a href="{{url_for('home')}}">Home</a>
+            <a href="{{url_for('dboard')}}">Dashboard</a>
+            <a href="{{url_for('login')}}">Logout</a>
+        </div>
+    </nav>
+    <div class="details">
+        <form method="GET" action="{{ url_for('search_by_id') }}">
+            <div id="search-section">
+                <label for="searchId">Search by ID: </label>
+                <input type="text" name="searchId" placeholder="Enter ID">
+                <button type="submit">Search</button>
+            </div>
+        </form>
+
+        <table>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Date and Time </th>
+                <th>Result</th>
+            </tr>
+            {% for data in data %}
+            <tr>
+                <td>{{data.id}}</td>
+                <td>{{data.Name}}</td>
+                <td>{{data.date_added}}</td>
+                <td>{{data.Result}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+</body>
+
+</html>

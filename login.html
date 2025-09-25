@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Login page</title>
+</head>
+<body>
+<div class="column">
+
+</div>
+
+<div class="navbar">
+    <div class="menu">
+    <ul>
+        <li><a href="{{url_for('home')}}"><u>Home</u></a></li>
+        <li><a href="{{url_for('register')}}"><u>Registration</u></a></li>
+    </ul>
+    </div>
+</div>
+
+<div class="center">
+
+    <h1>Login Page</h1>
+
+    <form action="/login" method="POST">
+        <div class="txt_field">
+            <input type="text" id="username" name="username" required>
+            <span></span>
+            <label for="username">Username</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" id="password" name="password" required>
+            <span></span>
+            <label for="password">Password</label>
+        </div>
+            <input type="submit" value="Login">
+        <div class="register_link">
+            Don't have an account? <a href="{{url_for('register')}}">Register</a>
+        </div>
+
+
+    </form>
+</div>
+
+</body>
+</html>

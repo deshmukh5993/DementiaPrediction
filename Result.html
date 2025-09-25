@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8yNV9zaW1wbGVfM2RfaWxsdXN0cmF0aW9uX29mX2FfcmVjb3Zlcnlfcm9vbV93aV80ZjhkNDIwNC02N2I4LTQwMDQtYTBlNy05YjljMjIyMzE2ZGVfMS5qcGc.jpg');
+            background-size: cover;
+            background-position: right center;
+            background-attachment: fixed;
+        }
+
+        .overlay {
+            width: 80%;
+            max-width: 500px;
+            /* Adjust the maximum width as needed */
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Adjust the background color and opacity */
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .close {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .close:hover {
+            color: red;
+            /* Change the color on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>The Patient is </h2>
+
+            <div id="predict_content" class="content">
+                {{ predict_content }}
+            </div>
+            <a class="close" href="http://127.0.0.1:5000/form">Return to form</a>
+        </div>
+    </div>
+</body>
+
+</html>
